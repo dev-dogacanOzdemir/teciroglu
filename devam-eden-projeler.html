@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devam Eden Projeler - Teciroğlu İnşaat</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Türkçe karakterleri desteklemek için font subset'ini genişletiyoruz -->
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500;600;700&subset=latin-ext&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Yeni fontları ekliyoruz -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+
+    <!-- Yedek olarak Raleway fontunu da ekleyelim (Türkçe karakter desteği iyi) -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&subset=latin-ext&display=swap"
+          rel="stylesheet">
+    <!-- Devam eden projeler sayfası için özel stiller -->
+    <link rel="stylesheet" href="css/devam-eden-projeler.css">
+</head>
+<body>
+
+<!-- Tam Sayfa Menü -->
+<div class="fullscreen-menu">
+    <div class="close-btn">
+        <i class="fas fa-times"></i>
+    </div>
+    <div class="menu-content">
+        <ul class="menu-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="devam-eden-projeler.html">Devam Eden Projeler</a></li>
+            <li><a href="bitmis-projeler.html">Tamamlanan Projeler</a></li>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+        <div class="menu-contact">
+            <h3>İletişim</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Örnek Mah. İnşaat Cad. No:123, İstanbul</p>
+            <p><i class="fas fa-phone"></i> +90 212 123 45 67</p>
+            <p><i class="fas fa-envelope"></i> info@tecirogluyapi.com</p>
+        </div>
+    </div>
+</div>
+
+<!-- Header Section -->
+<header id="main-header">
+    <div class="container header-container">
+        <!-- Sol taraf - Sosyal medya ikonları -->
+        <div class="header-left">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <!-- Orta - Logo -->
+        <div class="logo-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/teciroglu-LOGO-GOLD.svg" alt="Teciroğlu İnşaat Logo" class="logo-img">
+                </a>
+            </div>
+        </div>
+
+        <!-- Sağ taraf - Menü butonu -->
+        <div class="header-right">
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Sayfa Hero Section -->
+<section class="page-hero">
+    <div class="container">
+        <h1 class="page-title">Devam Eden Projeler</h1>
+        <p> <b>Geleceği inşa ediyoruz.</b> <br>
+            Hayata geçirdiğimiz projelerle sadece yapılar değil, yaşam alanları kuruyoruz. <br>
+            Devam eden projelerimiz; estetik, konfor ve kaliteyi bir araya getirerek sizlere modern yaşamın en özel halini sunuyor.</p>
+    </div>
+</section>
+
+<!-- YENİ EKLENEN BÖLÜM - Projeler Grid Bölümü -->
+<section class="projects-overview">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Projelerimiz</h2>
+            <p> <b>Güvenle yükselen yapılar, hayata değer katan projeler.</b> <br>
+                Teciroğlu İnşaat, modern şehir yaşamına uyumlu, estetik ve dayanıklı projeleriyle geleceğin yaşam alanlarını bugünden inşa ediyor.</p>
+        </div>
+        
+        <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; justify-items: center; justify-content: center; max-width: 1200px; margin: 40px auto;">
+            <!-- Proje 1 -->
+            <div class="project-card">
+                <div class="project-card-img">
+                    <img src="img/alyavitamamak/alyavitamamakcizim1.jpeg" alt="Alya Vita Mamak">
+                    <span class="project-status-badge">Teslim Aşamasında</span>
+                    <span class="project-completion-badge">Tamamlanma: %90</span>
+                </div>
+                <div class="project-card-content">
+                    <h3 class="project-card-title">Alya Vita Mamak</h3>
+                    <div class="project-card-location">
+                        <i class="fas fa-map-marker-alt"></i> Mamak, Ankara
+                    </div>
+                    <p class="project-card-description">Estetik mimarisi ve işlevsel tasarımıyla öne çıkan Alya Vita Mamak, konforlu ve huzurlu bir yaşam alanı vadediyor. Şehir merkezine yakın, doğayla iç içe bir yaşam sunuyor.</p>
+                    <a href="alya-vita-mamak.html" class="btn-details">
+                        <i class="fas fa-eye"></i> Detayları Gör
+                    </a>
+                </div>
+            </div>
+        </div>
+
+            <!-- Proje 2
+            <div class="project-card">
+                <div class="project-card-img">
+                    <img src="img/gulerapartmani/gulerapartmani8.jpeg" alt="Güler Apartmanı GOP">
+                    <span class="project-status-badge">Kaba İnşaat Tamamlandı</span>
+                    <span class="project-completion-badge">Tamamlanma: %85</span>
+                </div>
+                <div class="project-card-content">
+                    <h3 class="project-card-title">Güler Apartmanı GOP</h3>
+                    <div class="project-card-location">
+                        <i class="fas fa-map-marker-alt"></i> Gaziosmanpaşa, İstanbul
+                    </div>
+                    <p class="project-card-description">Şehrin en prestijli bölgesinde yükselen, modern mimari ile geleneksel değerleri buluşturan ayrıcalıklı bir yaşam projesi.</p>
+                    <a href="guler-apartmani-gop.html" class="btn-details">
+                        <i class="fas fa-eye"></i> Detayları Gör
+                    </a>
+                </div>
+            </div>
+            
+             Proje 3
+            <div class="project-card">
+                <div class="project-card-img">
+                    <img src="img/alyaparketlik/alyaparketlik.jpeg" alt="Mavi Vadi Evleri">
+                    <span class="project-status-badge">Temel Atma Aşamasında</span>
+                    <span class="project-completion-badge">Tamamlanma: %25</span>
+                </div>
+                <div class="project-card-content">
+                    <h3 class="project-card-title">Mavi Vadi Evleri</h3>
+                    <div class="project-card-location">
+                        <i class="fas fa-map-marker-alt"></i> Bağcılar, İstanbul
+                    </div>
+                    <p class="project-card-description">Şehir hayatının stresinden uzaklaşıp doğayla iç içe yaşamak isteyenler için tasarlanmış butik bir villa projesi.</p>
+                    <a href="mavi-vadi-evleri.html" class="btn-details">
+                        <i class="fas fa-eye"></i> Detayları Gör
+                    </a>
+                </div>
+            </div>
+            -->
+
+        </div>
+    </div>
+</section>
+
+<!-- Ayırıcı Çizgi -->
+<div class="container">
+    <div class="section-divider"></div>
+</div>
+
+<!-- Detaylı Projeler Bölümü -->
+<section class="section">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Proje Detayları</h2>
+        </div>
+        
+        <!-- Proje 1 -->
+        <div class="project-detail-card">
+            <div class="project-detail-header">
+                <div class="project-gallery">
+                    <div class="gallery-main">
+                        <img src="img/alyavitamamak/alyavitamamakcizim1.jpeg" alt="Alya Vita Çakırlar Ana Görsel" class="gallery-image">
+                    </div>
+                    <div class="gallery-side">
+                        <img src="img/alyavitamamak/alyavitamamak42.jpeg" alt="Alya Vita Çakırlar Detay 1" class="gallery-image">
+                        <img src="img/alyavitamamak/alyavitamamak43.jpeg" alt="Alya Vita Çakırlar Detay 2" class="gallery-image">
+                    </div>
+                </div>
+            </div>
+            <div class="project-detail-content">
+                <span class="project-status">İnşaat Aşamasında</span>
+                <h2 class="project-detail-title">Alya Vita Mamak</h2>
+                <div class="project-detail-location">
+                    <i class="fas fa-map-marker-alt"></i> Mamak, Ankara
+                </div>
+
+                <div class="project-progress">
+                    <div class="progress-bar" style="width: 70%"></div>
+                </div>
+                <div class="progress-percentage">Tamamlanma: %70</div>
+
+                <div class="project-detail-description">
+                    <p>Modern mimarisi ve işlevsel iç tasarımıyla öne çıkan <b>Alya Vita Mamak</b>, Ankara’nın yükselen bölgelerinden Mamak’ta yaşamla buluşuyor. Ferah daire planları, estetik detaylarla zenginleştirilmiş iç mekanları ve geniş sosyal alanlarıyla konforu yeniden tanımlayan bu proje, hem aile yaşamına hem de yatırım amaçlı alımlara hitap ediyor.</p>
+                    <p>Panoramik şehir manzarasına sahip balkonlar, doğal ışığı bolca içeri alan geniş pencereler, fonksiyonel yaşam alanları ve zarif detaylarıyla Alya Vita Mamak, sizlere kaliteli bir yaşamın kapılarını aralıyor. Her detayın titizlikle düşünüldüğü bu projede, estetik ve fonksiyon bir arada sunuluyor.</p>
+                </div>
+
+                <h3>Proje Özellikleri</h3>
+                <div class="project-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div>Asansörlü Bina</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <div>Tam Donanımlı Fitness Merkezi</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <div>Peyzaj Bahçeleri</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div>Kapalı Otopark</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>7/24 Güvenlik</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <div>Çocuk Oyun Alanları</div>
+                    </div>
+                </div>
+
+                <h3>Teknik Özellikler</h3>
+                <div class="specifications">
+                    <div class="spec-item">
+                        <div class="spec-value">6.800 m²</div>
+                        <div class="spec-label">Arsa Alanı</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-value">12.500 m²</div>
+                        <div class="spec-label">İnşaat Alanı</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-value">3 + 1</div>
+                        <div class="spec-label">Daire Tipleri</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-value">48</div>
+                        <div class="spec-label">Daire Sayısı</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-value">A+</div>
+                        <div class="spec-label">Enerji Sınıfı</div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-cta">
+                <div>
+                    <h3>İlginizi mi çekti?</h3>
+                    <p>Projeyle ilgili detaylı bilgi almak için bize ulaşın.</p>
+                </div>
+                <a href="alya-vita-cakirlar.html" class="btn btn-primary">Detayları Gör</a>
+            </div>
+        </div>
+
+        <!-- Proje 2
+        <div class="project-detail-card">
+            <div class="project-detail-header">
+                <div class="project-gallery">
+                    <div class="gallery-main">
+                        <img src="img/gulerapartmani/gulerapartmani8.jpeg" alt="Güler Apartmanı GOP Ana Görsel" class="gallery-image">
+                    </div>
+                    <div class="gallery-side">
+                        <img src="img/gulerapartmani/gulerapartmani2.jpeg" alt="Güler Apartmanı GOP Detay 1" class="gallery-image">
+                        <img src="img/gulerapartmani/gulerapartmani6.jpeg" alt="Güler Apartmanı GOP Detay 2" class="gallery-image">
+                    </div>
+                </div>
+            </div>
+            <div class="project-detail-content">
+                <span class="project-status">Kaba İnşaat Tamamlandı</span>
+                <h2 class="project-detail-title">Güler Apartmanı GOP</h2>
+                <div class="project-detail-location">
+                    <i class="fas fa-map-marker-alt"></i> Gaziosmanpaşa, İstanbul
+                </div>
+
+                <div class="project-progress">
+                    <div class="progress-bar" style="width: 85%"></div>
+                </div>
+                <div class="progress-percentage">Tamamlanma: %85</div>
+
+                <div class="project-detail-description">
+                    <p>Güler Apartmanı GOP, şehrin en prestijli bölgesinde yükselen, modern mimari ile geleneksel değerleri buluşturan ayrıcalıklı bir yaşam projesidir. Geniş terasları ve ferah iç mekanlarıyla sıra dışı bir konfor sunmaktadır.</p>
+                    <p>Akıllı ev sistemleri, özel tasarım mutfak ve banyoları ile günümüz teknolojisinin tüm imkanlarını kullanıcılarına sunan projemiz, kaliteli malzeme ve işçilik ile fark yaratıyor.</p>
+                </div>
+
+                <h3>Proje Özellikleri</h3>
+                <div class="project-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div>Asansörlü Bina</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div>Akıllı Ev Sistemleri</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div>Kapalı Otopark</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>24 Saat Güvenlik</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div>Teras Bahçe</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-solar-panel"></i>
+                        </div>
+                        <div>Güneş Enerjisi Desteği</div>
+                    </div>
+                </div>
+
+                <h3>Teknik Özellikler</h3>
+                <div class="specifications">
+                    <div class="spec-item">
+                        <div class="spec-value">2.200 m²</div>
+                        <div class="spec-label">Arsa Alanı</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-value">8.400 m²</div>
+                        <div class="spec-label">İnşaat Alanı</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-value">2+1 / 3+1</div>
+                        <div class="spec-label">Daire Tipleri</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-value">32</div>
+                        <div class="spec-label">Daire Sayısı</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-value">A+</div>
+                        <div class="spec-label">Enerji Sınıfı</div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-cta">
+                <div>
+                    <h3>İlginizi mi çekti?</h3>
+                    <p>Projeyle ilgili detaylı bilgi almak için bize ulaşın.</p>
+                </div>
+                <a href="guler-apartmani-gop.html" class="btn btn-primary">Detayları Gör</a>
+            </div>
+        </div>
+-->
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="img/teciroglu-LOGO-GOLD.svg" alt="Teciroğlu İnşaat Logo" class="footer-logo-img">
+            </div>
+            <div class="footer-links">
+                <h4>Hızlı Erişim</h4>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="devam-eden-projeler.html">Devam Eden Projeler</a></li>
+                    <li><a href="bitmis-projeler.html">Bitmiş Projeler</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Bizi Takip Edin</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Teciroğlu İnşaat. Tüm hakları saklıdır.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

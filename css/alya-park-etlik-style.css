@@ -1,0 +1,566 @@
+/* Proje Detay Sayfası Stilleri */
+        .project-hero {
+            height: 70vh;
+            position: relative;
+            margin-top: -120px;
+            padding-top: 120px;
+            overflow: hidden;
+        }
+        
+        .project-hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.7);
+        }
+        
+        .project-hero-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-bottom: 80px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .project-name {
+            font-family: 'AW Conqueror Didot Light', serif;
+            font-size: 4.5rem;
+            color: white;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .project-name::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background-color: var(--copper);
+            border-radius: 2px;
+        }
+        
+        .project-location-hero {
+            font-size: 1.5rem;
+            color: var(--copper);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .project-location-hero i {
+            margin-right: 10px;
+        }
+        
+        .project-slogan {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+        
+        .project-info-bar {
+            background-color: rgba(13, 35, 64, 0.9);
+            padding: 20px 0;
+            position: relative;
+            margin-top: -40px;
+            z-index: 2;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-info-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .project-status-display {
+            display: flex;
+            align-items: center;
+        }
+        
+        .status-badge {
+            background: var(--copper);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-right: 20px;
+        }
+        
+        .progress-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .progress-label {
+            font-size: 0.9rem;
+            color: white;
+        }
+        
+        .progress-bar-container {
+            width: 200px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--copper), var(--copper-light));
+            border-radius: 4px;
+            /* width is set inline in HTML for specific project completion */
+        }
+        
+        .project-completion {
+            color: var(--copper);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .project-content-section {
+            padding: 80px 0;
+        }
+        
+        .project-content-section.bg-light {
+            background-color: white;
+            color: #333;
+        }
+        
+        .section-description {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .description-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .description-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .key-features {
+            flex: 1;
+            min-width: 250px;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 100%);
+            padding: 30px;
+            border-radius: 8px;
+            color: white;
+        }
+        
+        .key-features h3 {
+            font-family: 'AW Conqueror Didot Light', serif;
+            color: var(--copper);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .features-list li i {
+            color: var(--copper);
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .detailed-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon-container {
+            width: 100%;
+            height: 160px;
+            background: linear-gradient(135deg, rgba(200, 117, 51, 0.9) 0%, rgba(224, 148, 107, 0.9) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .feature-card-content {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .feature-card-content h4 {
+            color: var(--copper);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .feature-card-content p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .specs-table th, 
+        .specs-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .specs-table th {
+            background-color: var(--dark-blue);
+            color: white;
+            font-weight: 500;
+        }
+        
+        .specs-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .specs-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .floor-plans {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+            justify-content: center; /* Kartları yatayda ortalar */
+        }
+        
+        .plan-card {
+            flex: 1;
+            min-width: 300px;
+            max-width: 450px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .plan-image {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+            background-color: #f5f5f5;
+            border-bottom: 1px solid #eee;
+            padding: 20px;
+        }
+        
+        .plan-content {
+            padding: 20px;
+        }
+        
+        .plan-content h4 {
+            font-family: 'AW Conqueror Didot Light', serif;
+            color: var(--copper);
+            margin-bottom: 5px;
+        }
+        
+        .plan-specs {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        
+        .plan-spec-item {
+            text-align: center;
+        }
+        
+        .spec-number {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--copper);
+        }
+        
+        .spec-text {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .gallery-item {
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .location-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .map-container {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .location-details {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .location-details h3 {
+            font-family: 'AW Conqueror Didot Light', serif;
+            color: var(--copper);
+            margin-bottom: 20px;
+        }
+        
+        .distance-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .distance-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .distance-list li i {
+            width: 40px;
+            height: 40px;
+            background: rgba(200, 117, 51, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--copper);
+            margin-right: 15px;
+        }
+        
+        .distance-list li span {
+            font-weight: 600;
+            margin-right: 5px;
+        }
+        
+        .section-title {
+            font-family: 'AW Conqueror Didot Light', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: var(--copper);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--copper);
+            margin-bottom: 30px;
+        }
+        
+        .section-title.text-center {
+            text-align: center;
+        }
+        
+        .section-title.text-center::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .contact-cta {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 100%);
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-title {
+            font-family: 'AW Conqueror Didot Light', serif;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-text {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-outline-light {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .project-name {
+                font-size: 3.8rem;
+            }
+            
+            .project-info-content {
+                justify-content: center;
+                gap: 20px;
+            }
+            
+            .progress-bar-container {
+                width: 150px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .project-hero {
+                height: 60vh;
+            }
+            
+            .project-name {
+                font-size: 3rem;
+            }
+            
+            .project-location-hero {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .cta-title {
+                font-size: 2.3rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .project-hero {
+                height: 50vh;
+            }
+            
+            .project-name {
+                font-size: 2.5rem;
+                padding-left: 20px;
+            }
+            
+            .project-name::before {
+                width: 4px;
+            }
+            
+            .project-location-hero {
+                font-size: 1rem;
+            }
+            
+            .status-badge {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+            
+            .progress-bar-container {
+                width: 120px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+        }

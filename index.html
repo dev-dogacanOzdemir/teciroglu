@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teciroğlu İnşaat - Portfolyo</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Türkçe karakterleri desteklemek için font subset'ini genişletiyoruz -->
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500;600;700&subset=latin-ext&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Yeni fontları ekliyoruz -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+
+    <!-- Yedek olarak Raleway fontunu da ekleyelim (Türkçe karakter desteği iyi) -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&subset=latin-ext&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<!-- company-name-overlay'i body içinde en üste taşıyoruz -->
+<div class="company-name-overlay">
+    <span class="headline">TEMELİMİZ</span>
+    <span class="guven">GÜVEN</span>
+    <span class="signature">hedefimiz</span>
+    <span class="unchanged">mükemmellik...</span>
+</div>
+
+
+<!-- Tam Sayfa Menü -->
+<div class="fullscreen-menu">
+    <div class="close-btn">
+        <i class="fas fa-times"></i>
+    </div>
+    <div class="menu-content">
+        <ul class="menu-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="devam-eden-projeler.html">Devam Eden Projeler</a></li>
+            <li><a href="bitmis-projeler.html">Tamamlanan Projeler</a></li>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+        <div class="menu-contact">
+            <h3>İletişim</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Atapark Mah. 340. Cad. No: 63/A-B, Keçiören - Ankara</p>
+            <p><i class="fas fa-phone"></i> +90 531 492 65 03</p>
+            <p><i class="fas fa-envelope"></i> tecirogluinsaat@hotmail.com</p>
+        </div>
+    </div>
+</div>
+
+<!-- Header Section -->
+<header id="main-header">
+    <div class="container header-container">
+        <!-- Sol taraf - Sosyal medya ikonları -->
+        <div class="header-left">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <!-- Orta - Logo -->
+        <div class="logo-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/teciroglu-LOGO-GOLD.svg" alt="Teciroğlu İnşaat Logo" class="logo-img">
+                </a>
+            </div>
+        </div>
+
+        <!-- Sağ taraf - Menü butonu -->
+        <div class="header-right">
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Slider Bölümü - Resim Arkaplanları ile -->
+<section id="hero-slider">
+    <div class="slider-container">
+        <!-- Birinci Slider - Resim Arkaplan -->
+        <div class="slide active" style="background-image: url('img/slider1.png'); background-size: cover; background-position: center;">
+            <div class="slide-content">
+                <h1 class="project-title">
+                    <span class="project-location">GOP</span>
+                    GÜLER APARTMANI
+                </h1>
+                <p class="project-slogan">Modern Yaşamın Yeni Adresi</p>
+                <a href="#projeler" class="btn btn-primary">Projeyi İncele</a>
+            </div>
+        </div>
+
+        <!-- İkinci Slider - Resim Arkaplan -->
+        <div class="slide" style="background-image: url('img/slider/slider2.jpg'); background-size: cover; background-position: center;">
+            <div class="slide-content">
+                <h1 class="project-title">
+                    <span class="project-location">KÜÇÜKKÖY</span>
+                    RESIDENCE
+                </h1>
+                <p class="project-slogan">Şehrin Merkezinde Konforlu Yaşam</p>
+                <a href="#projeler" class="btn btn-primary">Projeyi İncele</a>
+            </div>
+        </div>
+
+        <!-- Üçüncü Slider - Resim Arkaplan -->
+        <div class="slide" style="background-image: url('img/slider/slider3.jpg'); background-size: cover; background-position: center;">
+            <div class="slide-content">
+                <h1 class="project-title">
+                    <span class="project-location">BAĞCILAR</span>
+                    TEPE EVLERİ
+                </h1>
+                <p class="project-slogan">Doğa ile İç İçe Yaşam Kalitesi</p>
+                <a href="#projeler" class="btn btn-primary">Projeyi İncele</a>
+            </div>
+        </div>
+
+        <div class="slider-controls">
+            <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+    </div>
+</section>
+<!-- Box -->
+<section id="hakkimizda" class="section bg-light">
+    <div class="container">
+        <div class="section-header">
+            <p class="section-slogan"></p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p></p>
+                <p></p>
+            </div>
+            <div class="about-image">
+                <img src="img/about.jpg" alt="Teciroğlu İnşaat">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- İstatistikler ve Hakkımızda -->
+<section id="istatistikler" class="section stats-section">
+    <div class="container">
+        <div class="stats-container">
+            <div class="about-section">
+                <h2 style="font-family: 'AW Conqueror Didot Light', serif; color: rgba(200, 117, 51, 1); text-align: center; font-size: 45px;">
+                    Hakkımızda</h2>
+                <div class="line"></div>
+                <p style="text-align: center;">Teciroğlu İnşaat, kurulduğu günden bu yana güvenilirlik, kalite ve
+                    mükemmellik ilkeleriyle faaliyet gösteren bir yapı firmasıdır. Ankara merkezli şirketimiz; konut, iş
+                    merkezi ve karma projelerde modern mimariyi yüksek mühendislik standartlarıyla birleştirerek
+                    müşterilerine değer katmayı amaçlamaktadır.
+                    <br>
+                    <br>
+                    Bugüne kadar tamamladığımız sayısız projede estetik, fonksiyonellik ve dayanıklılığı bir araya
+                    getirerek şehrin siluetine imzamızı attık. Her bir projemizde; doğaya saygılı, enerji verimliliği
+                    yüksek ve yaşanabilir alanlar üretmeyi hedefledik.
+                    <br>
+                    <br>
+                    "Temelimiz Güven" mottosuyla çıktığımız bu yolda; yalnızca yapılar değil, insanların hayatlarında iz
+                    bırakacak yaşam alanları inşa ediyoruz. Müşteri memnuniyetini bir sonuç değil, süreç boyunca
+                    korunması gereken bir değer olarak görüyoruz.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projeler -->
+<section id="projeler" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2 style="font-family: 'AW Conqueror Didot Light', serif; text-align: center; font-size: 45px;">
+                Devam Eden Projeler</h2>
+            <div class="line"></div>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card" style="background-color: #f7f3eb; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
+                <div class="project-img">
+                    <img src="img/alyavitacakirlar/alyavitacakirlar3.jpeg" alt="Proje 1">
+                    <div class="project-overlay">
+                        <a href="bitmis-projeler.html" class="btn-outline">Detayları Gör</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h1 style="font-family: 'AW Conqueror Didot Light', serif; color: rgba(200, 117, 51, 1); font-weight: 10000;">Alya Vita Çakırlar</h1>
+                    <p>Modern tasarımlı lüks konut projesi</p>
+                </div>
+            </div>
+            <div class="project-card" style="background-color: #f7f3eb; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
+                <div class="project-img">
+                    <img src="img/gulerapartmani/gulerapartmani8.jpeg" alt="Proje 2">
+                    <div class="project-overlay">
+                        <a href="bitmis-projeler.html" class="btn-outline">Detayları Gör</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h1 style="font-family: 'AW Conqueror Didot Light', serif; color: rgba(200, 117, 51, 1); font-weight: 10000;" >Güler Apartmanı GOP</h1>
+                    <p>A+ sınıfı ofis ve iş merkezi</p>
+                </div>
+            </div>
+            <div class="project-card" style="background-color: #f7f3eb; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
+                <div class="project-img">
+                    <img src="img/alyaparketlik/alyaparketlik.jpeg" alt="Proje 3">
+                    <div class="project-overlay">
+                        <a href="bitmis-projeler.html" class="btn-outline">Detayları Gör</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h1 style="font-family: 'AW Conqueror Didot Light', serif; color: rgba(200, 117, 51, 1);">Mavi Vadi Evleri</h1>
+                    <p>Doğayla iç içe villa projesi</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="bitmis-projeler.html" class="btn btn-outline">Tüm Projelerimiz</a>
+        </div>
+    </div>
+</section>
+
+<!-- Tamamlanan Projelerimiz -->
+<section id="tamamlanan-projeler" class="section stats-section" style="background-image: url('img/ankara-bg.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay;">
+    <div class="container">
+        <div class="section-header">
+            <h2 style="font-family: 'AW Conqueror Didot Light', serif; text-align: left; margin-left: 15px; font-size: 45px;">
+                Tamamlanan Projelerimiz</h2>
+            <div class="line" style="margin-left: 15px;"></div>
+            <p style="text-align: left; margin-left: 15px; margin-top: 20px;">
+                Bugüne kadar başarıyla tamamladığımız tüm projelerimizi incelemek ve
+                Teciroğlu İnşaat kalitesini keşfetmek için tıklayın.
+            </p>
+        </div>
+        <div style="margin-top: 30px; margin-left: 15px;">
+            <a href="bitmis-projeler.html" class="btn btn-outline btn-lg">Projeleri Görüntüle</a>
+        </div>
+    </div>
+</section>
+
+<!-- İletişim CTA -->
+
+<!-- İletişim CTA -->
+<section id="iletisim-cta" class="section stats-section">
+    <div class="container">
+        <div class="cta-content text-center">
+            <h2 style="font-family: 'AW Conqueror Didot Light', serif; color: rgba(200, 117, 51, 1); font-size: 45px;">Bize Ulaşın</h2>
+            <div class="line"></div>
+            <p> Soru, görüş ve önerilerinizi aşağıdaki iletişim formu aracılığı ile bizimle paylaşabilirsiniz. </p>
+            <div class="contact-info-grid">
+                <div class="contact-box">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Atapark Mah. 340. Cad.<br>No: 63/A-B, Keçiören - Ankara</p>
+                    <a href="#">Yol Tarifi Al</a>
+                </div>
+
+                <div class="contact-separator"></div> <!-- Çizgi -->
+
+                <div class="contact-box">
+                    <i class="fas fa-phone-alt"></i>
+                    <p>+90 531 492 65 03</p>
+                    <i class="fas fa-envelope"></i>
+                    <p>tecirogluinsaat@hotmail.com</p>
+                </div>
+
+                <div class="contact-separator"></div> <!-- Çizgi -->
+
+                <div class="contact-box">
+                    <p>Bizi Sosyal Medyadan Takip Edin</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="img/teciroglu-LOGO-GOLD.svg" alt="Teciroğlu İnşaat Logo" class="footer-logo-img">
+            </div>
+            <div class="footer-links">
+                <h4>Hızlı Erişim</h4>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="devam-eden-projeler.html">Devam Eden Projeler</a></li>
+                    <li><a href="bitmis-projeler.html">Bitmiş Projeler</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Bizi Takip Edin</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Teciroğlu İnşaat. Tüm hakları saklıdır.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
