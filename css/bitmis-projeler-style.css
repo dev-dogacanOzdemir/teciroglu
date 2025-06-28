@@ -403,6 +403,8 @@
     .project-gallery {
         grid-template-columns: 1fr;
         height: auto;
+        max-height: 400px;
+        overflow: hidden;
     }
     
     .gallery-side {
@@ -412,11 +414,28 @@
     
     .completed-info {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
         align-items: stretch; /* Stretch items in column layout */
     }
+    
+    .completed-date {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+    
     .badges {
         justify-content: flex-start; /* Align badges to start in mobile view */
+        gap: 8px;
+    }
+    
+    .completed-badge,
+    .award-badge {
+        font-size: 0.8rem;
+        padding: 5px 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
     }
 }
 
@@ -451,6 +470,11 @@
         grid-template-columns: 1fr;
     }
     
+    .project-gallery {
+        max-height: 300px;
+        overflow: hidden;
+    }
+    
     .project-features {
         grid-template-columns: 1fr;
     }
@@ -459,9 +483,74 @@
         grid-template-columns: 1fr 1fr;
     }
     
+    .completed-info {
+        padding: 12px 15px;
+        margin: 15px 0 25px;
+    }
+    
+    .completed-date {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+    
+    .badges {
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+    }
+    
+    .completed-badge,
+    .award-badge {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+        display: inline-block;
+        max-width: none;
+        width: auto;
+    }
+    
     .project-cta {
         flex-direction: column;
         gap: 20px;
         text-align: center;
+    }
+}
+
+/* 425px ve altı için küçük ekranlar - sadece ana fotoğraf */
+@media (max-width: 425px) {
+    .project-gallery {
+        grid-template-columns: 1fr !important;
+        max-height: 280px;
+        overflow: hidden;
+    }
+    
+    .gallery-side {
+        display: none !important;
+    }
+    
+    .gallery-main {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .project-status {
+        margin-top: 20px;
+    }
+}
+
+/* 375px ve altı için çok küçük ekranlar - sadece ana fotoğraf */
+@media (max-width: 375px) {
+    .project-gallery {
+        grid-template-columns: 1fr !important;
+        max-height: 250px;
+        overflow: hidden;
+    }
+    
+    .gallery-side {
+        display: none !important;
+    }
+    
+    .gallery-main {
+        width: 100%;
+        height: 100%;
     }
 }
