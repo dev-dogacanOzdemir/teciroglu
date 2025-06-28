@@ -180,4 +180,160 @@ document.addEventListener('DOMContentLoaded', function() {
             contactForm.reset();
         });
     }
+    
+    // Responsive davranışları için optimizasyonlar
+    let isMobile = window.innerWidth <= 768;
+    let isTablet = window.innerWidth <= 1024;
+    
+    // Pencere boyutu değiştiğinde mobile/tablet durumunu güncelle
+    window.addEventListener('resize', function() {
+        const newIsMobile = window.innerWidth <= 768;
+        const newIsTablet = window.innerWidth <= 1024;
+        
+        // Eğer mobile/tablet durumu değiştiyse gerekli güncellemeleri yap
+        if (newIsMobile !== isMobile || newIsTablet !== isTablet) {
+            isMobile = newIsMobile;
+            isTablet = newIsTablet;
+            
+            // Company overlay mobilde gizle
+            if (isMobile) {
+                companyNameOverlay.style.display = 'none';
+            } else {
+                companyNameOverlay.style.display = 'flex';
+                updateOverlayPosition();
+            }
+            
+            // Sosyal medya ikonlarını mobilde gizle
+            toggleSocialIcons();
+            
+            // Hakkımızda bölümünü mobilde gizle
+            toggleAboutSection();
+            
+            // Slider kontroller boyutlarını ayarla
+            adjustSliderControls();
+        }
+    });
+    
+    // Sosyal medya ikonlarını responsive olarak gizle/göster
+    function toggleSocialIcons() {
+        const socialIconContainers = document.querySelectorAll('.social-icons');
+        const socialSections = document.querySelectorAll('.footer-social, .contact-box:last-child');
+        
+        // Sosyal medya ikon konteynerlerini gizle/göster
+        socialIconContainers.forEach(container => {
+            if (isMobile) {
+                container.style.display = 'none';
+            } else {
+                // Desktop'ta default değerlere dön
+                const isHeaderSocial = container.closest('.header-left');
+                const isFooterSocial = container.closest('.footer-social');
+                const isMenuSocial = container.closest('.menu-contact');
+                const isContactSocial = container.closest('.contact-box');
+                
+                if (isHeaderSocial || isMenuSocial || isContactSocial) {
+                    container.style.display = 'flex';
+                } else if (isFooterSocial) {
+                    // Footer sosyal medya için özel düzenleme
+                    container.style.display = 'flex';
+                    container.style.gap = '15px';
+                    container.style.marginTop = '20px';
+                }
+            }
+        });
+        
+        // Sosyal medya bölümlerini tamamen gizle/göster
+        socialSections.forEach(section => {
+            if (isMobile) {
+                section.style.display = 'none';
+            } else {
+                // Desktop'ta footer sosyal medya bölümünü göster
+                if (section.classList.contains('footer-social')) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'flex';
+                }
+            }
+        });
+    }
+    
+    // Slider kontrollerini responsive olarak ayarla
+    function adjustSliderControls() {
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        
+        if (isMobile) {
+            // Mobilde daha küçük kontroller
+            prevBtn.style.width = '40px';
+            prevBtn.style.height = '40px';
+            nextBtn.style.width = '40px';
+            nextBtn.style.height = '40px';
+        } else if (isTablet) {
+            // Tablette orta boyut kontroller
+            prevBtn.style.width = '45px';
+            prevBtn.style.height = '45px';
+            nextBtn.style.width = '45px';
+            nextBtn.style.height = '45px';
+        } else {
+            // Desktop'ta standart boyut
+            prevBtn.style.width = '50px';
+            prevBtn.style.height = '50px';
+            nextBtn.style.width = '50px';
+            nextBtn.style.height = '50px';
+        }
+    }
+    
+    // Touch events için mobil optimizasyonu
+    if ('ontouchstart' in window) {
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        const sliderContainer = document.querySelector('.slider-container');
+        
+        sliderContainer.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        sliderContainer.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50; // Minimum swipe distance
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Sola swipe - sonraki slide
+                    nextSlide();
+                    resetSlider();
+                } else {
+                    // Sağa swipe - önceki slide
+                    prevSlide();
+                    resetSlider();
+                }
+            }
+        }
+    }
+    
+    // Sayfa ilk yüklendiğinde responsive ayarları uygula
+    if (isMobile) {
+        companyNameOverlay.style.display = 'none';
+    }
+    adjustSliderControls();
+    toggleSocialIcons(); // Sosyal medya ikonlarının durumunu da kontrol et
+    toggleAboutSection(); // Hakkımızda bölümünün durumunu da kontrol et
+
+    // Hakkımızda bölümünü mobilde gizle
+    function toggleAboutSection() {
+        const aboutSection = document.getElementById('hakkimizda');
+        
+        if (aboutSection) {
+            if (isMobile) {
+                aboutSection.style.display = 'none';
+            } else {
+                aboutSection.style.display = 'block';
+            }
+        }
+    }
 });

@@ -853,38 +853,12 @@ header .container {
 /* Responsive - Form */
 @media (max-width: 768px) {
     .contact-form-container {
-        padding: 25px;
+        padding: 0 20px;
     }
     
     .form-row {
         flex-direction: column;
         gap: 15px;
-    }
-}
-
-@media (max-width: 576px) {
-    .contact-form-container {
-        padding: 20px;
-    }
-    
-    .contact-form input,
-    .contact-form textarea {
-        padding: 12px 15px;
-    }
-    
-    .contact-form textarea {
-        min-height: 120px;
-    }
-    
-    .checkbox-group label {
-        font-size: 0.8rem;
-    }
-}
-
-/* Responsive - Form */
-@media (max-width: 768px) {
-    .contact-form-container {
-        padding: 20px;
     }
 }
 
@@ -900,6 +874,139 @@ header .container {
     
     .checkbox-group label {
         font-size: 0.8rem;
+    }
+}
+
+/* Additional Mobile Optimizations */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Header super mobile */
+    header {
+        height: 60px;
+    }
+    
+    .logo-container {
+        width: 100px;
+        height: 60px;
+    }
+    
+    .logo-img {
+        max-width: 75%;
+    }
+    
+    /* Slider super mobile */
+    #hero-slider {
+        margin-top: -60px;
+    }
+    
+    .slide-content {
+        padding: 0 10px;
+    }
+    
+    .project-title {
+        font-size: 1.8rem;
+        line-height: 1;
+    }
+    
+    .project-location {
+        font-size: 0.5em;
+    }
+    
+    .project-slogan {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    .btn-primary {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+    
+    /* Sections super mobile */
+    .section {
+        padding: 40px 0;
+    }
+    
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    /* Contact grid super mobile */
+    .contact-info-grid {
+        gap: 15px;
+        margin: 25px 0;
+    }
+    
+    .contact-box p {
+        font-size: 0.9rem;
+    }
+    
+    /* Menu super mobile */
+    .menu-links li a {
+        font-size: 1.6rem;
+    }
+    
+    .menu-contact p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra small devices - very old phones */
+@media (max-width: 320px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .project-title {
+        font-size: 1.6rem;
+    }
+    
+    .project-slogan {
+        font-size: 0.8rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .menu-links li a {
+        font-size: 1.4rem;
+    }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+    #hero-slider {
+        height: 100vh;
+    }
+    
+    .slide-content {
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .project-title {
+        font-size: 2.2rem;
+    }
+    
+    .project-slogan {
+        font-size: 1rem;
+    }
+}
+
+/* High DPI displays optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo-img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+    
+    .footer-logo-img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
     }
 }
 
@@ -923,12 +1030,18 @@ footer {
     min-width: 250px;
     display: flex;
     align-items: center;
+    justify-content: center; /* Logonun her zaman merkezi hizalanmasını sağla */
 }
 
 .footer-logo-img {
     max-width: 300px;
     height: auto;
     filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    object-fit: contain;
+    object-position: center;
 }
 
 .footer-links, .footer-social {
@@ -1166,10 +1279,11 @@ footer {
     transform: translateY(-3px);
 }
 
-/* Responsive Düzenlemeler */
+/* Enhanced Responsive Düzenlemeler (992px ve altı) */
 @media (max-width: 992px) {
     .about-content {
         flex-direction: column;
+        max-width: 900px;
     }
 
     .stat-number {
@@ -1178,168 +1292,1021 @@ footer {
 
     .company-name-overlay {
         font-size: 6rem;
+        left: 8%;
         top: calc(100vh - 50px);
-        transform: none; /* Responsive durumda da düz olmasını sağlıyoruz */
+        transform: none;
     }
 
-    .overlay-top {
-        font-size: 4rem;
+    .company-name-overlay .headline,
+    .company-name-overlay .guven {
+        font-size: 6rem;
     }
     
-    .overlay-bottom {
-        font-size: 3.5rem;
-        margin-left: 60px;
-    }
-}
-
-@media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    }
-
-    .footer-content {
-        gap: 30px;
-    }
-
-    .section-header h2 {
-        font-size: 2rem;
-    }
-
-    .cta-content h2 {
-        font-size: 1.8rem;
-    }
-
-    .project-title {
-        font-size: 2.8rem;
-        padding-left: 25px; /* Mobilde daha küçük padding */
-    }
-
-    .contact-info-grid {
-        flex-direction: column;
-    }
-
-    .contact-separator {
-        width: 80%;
-        height: 1px;
-        margin: 20px 0;
-    }
-
-    .project-location {
-        font-size: 0.65em;
-    }
-
-    .project-title::before {
-        width: 4px; /* Mobilde daha ince çizgi */
-    }
-
-    .project-slogan {
-        font-size: 1.2rem;
-    }
-
-    .section-slogan {
-        font-size: 1.1rem;
-    }
-
-    .company-name-overlay {
-        font-size: 5rem;
-        left: 10%;
-        top: calc(100vh - 40px);
-        transform: none !important; /* Responsive durumda da düz olmasını sağlıyoruz */
-    }
-
-    .overlay-top {
-        font-size: 3rem;
-    }
-    
-    .overlay-bottom {
-        font-size: 2.5rem;
-        margin-left: 40px;
-    }
-}
-
-@media (max-width: 576px) {
-    .stats-container {
-        flex-direction: column;
-    }
-
-    .stat-item {
-        width: 100%;
-        margin-bottom: 30px;
+    .company-name-overlay .signature,
+    .company-name-overlay .unchanged {
+        font-size: 9rem;
     }
 
     .projects-grid {
         grid-template-columns: 1fr;
-    }
-
-    .project-title {
-        font-size: 2.2rem;
-        padding-left: 20px; /* Daha küçük ekranlarda daha az padding */
-    }
-
-    .project-location {
-        font-size: 0.6em;
-    }
-
-    .project-title::before {
-        width: 3px; /* Daha küçük ekranlarda daha ince çizgi */
-    }
-
-    .project-slogan {
-        font-size: 1rem;
-    }
-
-    .section-slogan {
-        font-size: 1rem;
-    }
-
-    .company-name-overlay {
-        font-size: 4rem;
-        left: 5%;
-        top: calc(100vh - 30px);
-        transform: none !important; /* Responsive durumda da düz olmasını sağlıyoruz */
-    }
-
-    .overlay-top {
-        font-size: 2.2rem;
-    }
-    
-    .overlay-bottom {
-        font-size: 2rem;
-        margin-left: 30px;
+        max-width: 700px;
+        margin: 0 auto;
     }
 }
 
-/* Responsive Tasarım */
+/* Enhanced Mobile Responsive - Remove duplicate rules since they're covered above */
+
+/* ===== RESPONSIVE DESIGN IMPROVEMENTS ===== */
+
+/* Genel Mobile-first yaklaşım */
+.container {
+    padding: 0 20px;
+}
+
+/* Header Responsive Düzenlemeleri */
+@media (max-width: 1024px) {
+    header {
+        height: 100px;
+    }
+    
+    .logo-container {
+        width: 160px;
+        height: 100px;
+    }
+    
+    .logo-img {
+        max-width: 90%;
+    }
+    
+    .social-icons {
+        gap: 15px;
+    }
+    
+    .social-icons a {
+        font-size: 1.1rem;
+    }
+}
+
 @media (max-width: 768px) {
-    .logo-text {
-        font-size: 1.5rem;
+    header {
+        height: 80px;
+        padding: 0 10px;
     }
-
-    .menu-links li a {
-        font-size: 2rem;
+    
+    .header-container {
+        padding: 0 10px;
     }
-
-    .slide-content h1 {
-        font-size: 2.5rem;
+    
+    .logo-container {
+        width: 140px;
+        height: 80px;
     }
-
-    .slide-content p {
+    
+    .logo-img {
+        max-width: 85%;
+    }
+    
+    .social-icons {
+        gap: 12px;
+    }
+    
+    .social-icons a {
         font-size: 1rem;
+    }
+    
+    .menu-toggle {
+        width: 28px;
+        height: 20px;
+    }
+    
+    .menu-toggle span {
+        height: 2px;
     }
 }
 
 @media (max-width: 576px) {
-    .slide-content h1 {
-        font-size: 2rem;
+    header {
+        height: 70px;
     }
-
-    .menu-links li a {
-        font-size: 1.5rem;
+    
+    .logo-container {
+        width: 120px;
+        height: 70px;
     }
+    
+    .logo-img {
+        max-width: 80%;
+    }
+    
+    .social-icons {
+        gap: 10px;
+    }
+    
+    .social-icons a {
+        font-size: 0.9rem;
+    }
+    
+    .menu-toggle {
+        width: 25px;
+        height: 18px;
+    }
+}
 
+/* Slider Responsive Düzenlemeleri */
+@media (max-width: 1024px) {
+    #hero-slider {
+        margin-top: -100px;
+    }
+    
+    .slide-content {
+        left: 20%;
+        transform: translate(-20%, -50%);
+        max-width: 700px;
+        padding: 0 15px;
+    }
+    
+    .project-title {
+        font-size: 3.2rem;
+        padding-left: 25px;
+    }
+    
+    .project-slogan {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero-slider {
+        margin-top: -80px;
+        height: 100vh;
+    }
+    
+    .slide-content {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        max-width: 90%;
+        padding: 0 20px;
+    }
+    
+    .project-title {
+        font-size: 2.8rem;
+        padding-left: 0;
+        text-align: center;
+    }
+    
+    .project-title::before {
+        display: none;
+    }
+    
+    .project-slogan {
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+    }
+    
+    .btn-primary {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+    }
+    
+    .slider-controls {
+        padding: 0 20px;
+    }
+    
+    .prev-btn, .next-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #hero-slider {
+        margin-top: -70px;
+    }
+    
+    .slide-content {
+        max-width: 95%;
+        padding: 0 15px;
+    }
+    
+    .project-title {
+        font-size: 2.2rem;
+        line-height: 1.1;
+    }
+    
+    .project-location {
+        font-size: 0.6em;
+        margin-bottom: 0.05em;
+    }
+    
+    .project-slogan {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    .btn-primary {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .slider-controls {
+        padding: 0 15px;
+    }
+    
     .prev-btn, .next-btn {
         width: 40px;
         height: 40px;
+        font-size: 1rem;
+    }
+    
+    .slider-dots {
+        bottom: 20px;
+    }
+    
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* Company Name Overlay Responsive */
+@media (max-width: 1024px) {
+    .company-name-overlay {
+        left: 10%;
+        font-size: 6rem;
+    }
+    
+    .company-name-overlay .headline,
+    .company-name-overlay .guven {
+        font-size: 6rem;
+    }
+    
+    .company-name-overlay .signature,
+    .company-name-overlay .unchanged {
+        font-size: 9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .company-name-overlay {
+        display: none; /* Mobilde overlay'i gizle */
+    }
+}
+
+/* Section Headers Responsive */
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .line {
+        width: 80px;
+        height: 2px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section {
+        padding: 50px 0;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .line {
+        width: 60px;
+    }
+}
+
+/* Projects Grid Responsive */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: 40px auto 0;
+    }
+    
+    .project-card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        margin-top: 30px;
+    }
+    
+    .project-img {
+        height: 220px;
+    }
+    
+    .project-content {
+        padding: 15px;
+    }
+    
+    .project-content h1 {
+        font-size: 1.4rem;
+    }
+    
+    .project-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 576px) {
+    .project-img {
+        height: 200px;
+    }
+    
+    .project-content {
+        padding: 12px;
+    }
+    
+    .project-content h1 {
+        font-size: 1.3rem;
+    }
+    
+    .project-content p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Contact Info Grid Responsive */
+@media (max-width: 1024px) {
+    .contact-info-grid {
+        gap: 30px;
+    }
+    
+    .contact-box {
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-info-grid {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .contact-separator {
+        width: 60%;
+        height: 1px;
+        margin: 10px 0;
+    }
+    
+    .contact-box {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .contact-box .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-info-grid {
+        gap: 20px;
+        margin: 30px 0;
+    }
+    
+    .contact-box p {
+        font-size: 0.95rem;
+    }
+    
+    .contact-box i {
+        font-size: 1.3rem;
+    }
+}
+
+/* Stats Section Responsive */
+@media (max-width: 1024px) {
+    .stats-container {
+        justify-content: center;
+        gap: 30px;
+    }
+    
+    .stat-item {
+        padding: 15px;
+        margin: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stat-item {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+    
+    .stat-number {
+        font-size: 2.8rem;
+    }
+    
+    .stat-title {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .stat-title {
+        font-size: 1rem;
+    }
+}
+
+/* Footer Responsive */
+@media (max-width: 1024px) {
+    .footer-content {
+        gap: 30px;
+        justify-content: center;
+    }
+    
+    .footer-logo {
+        min-width: 200px;
+        text-align: center;
+    }
+    
+    .footer-logo-img {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding-top: 40px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        align-items: center;
+    }
+    
+    .footer-logo {
+        order: -1;
+        flex: none;
+        min-width: auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    
+    .footer-logo-img {
+        max-width: 220px;
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+    }
+    
+    .footer-links,
+    .footer-social {
+        flex: none;
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .footer-links h4::after,
+    .footer-social h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 576px) {
+    footer {
+        padding-top: 40px;
+    }
+    
+    .footer-content {
+        gap: 30px;
+    }
+    
+    .footer-logo-img {
+        max-width: 180px;
+    }
+    
+    .footer-links h4,
+    .footer-social h4 {
+        font-size: 1.1rem;
+    }
+    
+    .footer-links ul li {
+        margin-bottom: 10px;
+    }
+    
+    .footer-links ul li a {
+        font-size: 0.95rem;
+    }
+}
+
+/* Full Screen Menu Responsive */
+@media (max-width: 768px) {
+    .menu-content {
+        padding: 0 15px;
+    }
+    
+    .menu-links li a {
+        font-size: 2rem;
+        padding: 8px 15px;
+    }
+    
+    .menu-contact {
+        margin-top: 20px;
+    }
+    
+    .menu-contact h3 {
+        font-size: 1.3rem;
+    }
+    
+    .menu-contact p {
+        font-size: 1rem;
+    }
+    
+    .close-btn {
+        top: 20px;
+        right: 20px;
+        width: 35px;
+        height: 35px;
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .menu-links li a {
+        font-size: 1.8rem;
+        padding: 6px 12px;
+    }
+    
+    .menu-contact h3 {
+        font-size: 1.2rem;
+    }
+    
+    .menu-contact p {
+        font-size: 0.95rem;
+    }
+    
+    .close-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1.4rem;
+    }
+}
+
+/* About Section Responsive */
+@media (max-width: 768px) {
+    .about-content {
+        padding: 0 15px;
+    }
+    
+    .about-text p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-text p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}
+
+/* CTA Section Responsive */
+@media (max-width: 768px) {
+    .cta-content {
+        padding: 50px 0;
+    }
+    
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-content p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .cta-content {
+        padding: 40px 0;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Utility Classes for Mobile */
+@media (max-width: 768px) {
+    .text-center {
+        text-align: center !important;
+    }
+    
+    .mt-5 {
+        margin-top: 30px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .mt-5 {
+        margin-top: 25px !important;
+    }
+}
+
+/* Performance optimizations for mobile */
+@media (max-width: 768px) {
+    /* Reduce animations on mobile for better performance */
+    .slide {
+        transition: opacity 0.5s ease;
+    }
+    
+    .project-card {
+        transition: transform 0.2s ease;
+    }
+    
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    /* Optimize background attachment for mobile */
+    .stats-section,
+    #iletisim-cta {
+        background-attachment: scroll;
+    }
+    
+    /* Reduce blur effects on mobile */
+    header {
+        backdrop-filter: none;
+    }
+    
+    .fullscreen-menu {
+        backdrop-filter: blur(5px);
+    }
+}
+
+/* Optimize for touch interfaces */
+@media (pointer: coarse) {
+    /* Larger touch targets */
+    .btn,
+    .btn-primary,
+    .btn-outline {
+        min-height: 44px;
+        padding: 12px 24px;
+    }
+    
+    .dot {
+        width: 14px;
+        height: 14px;
+        margin: 0 3px;
+    }
+    
+    .prev-btn, .next-btn {
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    .menu-toggle {
+        padding: 10px;
+    }
+    
+    .social-icons a {
+        padding: 8px;
+        margin: 0 5px;
+    }
+}
+
+/* Hide social media icons on mobile */
+@media (max-width: 768px) {
+    .header-left .social-icons {
+        display: none;
+    }
+    
+    .footer-social .social-icons {
+        display: none;
+    }
+    
+    .menu-contact .social-icons {
+        display: none;
+    }
+    
+    .contact-box .social-icons {
+        display: none;
+    }
+    
+    /* Adjust header layout without social icons */
+    .header-left {
+        flex: 0;
+    }
+    
+    .header-right {
+        flex: 1;
+    }
+}
+
+@media (max-width: 576px) {
+    .social-icons {
+        display: none !important;
+    }
+}
+
+/* Hide social media section completely on mobile in contact area */
+@media (max-width: 768px) {
+    .contact-box:last-child {
+        display: none; /* "Bizi Sosyal Medyadan Takip Edin" kutusunu tamamen gizle */
+    }
+    
+    /* Adjust contact grid for mobile without social media box */
+    .contact-info-grid {
+        justify-content: center;
+    }
+    
+    /* Remove extra separators when social box is hidden */
+    .contact-separator:last-of-type {
+        display: none;
+    }
+}
+
+/* Hide social media section in footer on mobile ONLY */
+@media (max-width: 768px) {
+    .footer-social {
+        display: none !important;
+    }
+    
+    /* Adjust footer layout without social section - center logo */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        align-items: center;
+    }
+    
+    .footer-logo {
+        flex: none;
+        width: 100%;
+        order: -1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .footer-logo-img {
+        max-width: 280px;
+        width: auto;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .footer-links {
+        flex: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .footer-links h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Ensure social media icons are completely hidden on all mobile sizes */
+@media (max-width: 480px) {
+    .social-icons,
+    .footer-social,
+    .contact-box:last-child,
+    .menu-contact .social-icons {
+        display: none !important;
+        visibility: hidden !important;
+    }
+}
+
+@media (max-width: 320px) {
+    /* Extra small devices - ensure social media stays hidden */
+    .social-icons,
+    .footer-social {
+        display: none !important;
+    }
+}
+
+/* Footer logo centering for smaller screens */
+@media (max-width: 576px) {
+    .footer-logo {
+        padding: 0 20px;
+    }
+    
+    .footer-logo-img {
+        max-width: 250px;
+        width: 90%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo {
+        padding: 0 15px;
+    }
+    
+    .footer-logo-img {
+        max-width: 220px;
+        width: 85%;
+    }
+}
+
+@media (max-width: 320px) {
+    .footer-logo {
+        padding: 0 10px;
+    }
+    
+    .footer-logo-img {
+        max-width: 200px;
+        width: 80%;
+    }
+}
+
+/* Ensure footer logo is always centered with proper spacing */
+.footer-logo-img {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Additional mobile centering for very small screens */
+@media (max-width: 375px) {
+    .footer-logo {
+        padding: 0 20px;
+    }
+    
+    .footer-logo-img {
+        max-width: 180px;
+        width: 75%;
+    }
+}
+
+/* Landscape mobile optimization for footer */
+@media (max-width: 768px) and (orientation: landscape) {
+    .footer-logo-img {
+        max-width: 200px;
+    }
+    
+    .footer-content {
+        gap: 20px;
+    }
+}
+
+/* Mobile header layout adjustments */
+@media (max-width: 768px) {
+    /* Logo mobilde sola al */
+    .logo-container {
+        position: static;
+        left: auto;
+        transform: none;
+        width: auto;
+        height: auto;
+        order: -1;
+        flex: 1;
+        justify-content: flex-start;
+        margin-left: 20px;
+    }
+    
+    .logo-img {
+        max-width: 120px;
+        height: auto;
+    }
+    
+    /* Header container düzeni */
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .header-left {
+        display: none; /* Sosyal medya ikonlarını gizle */
+    }
+    
+    .header-right {
+        flex: 0;
+        order: 2;
+    }
+    
+    /* Hakkımızda bölümünü mobilde gizle */
+    #hakkimizda {
+        display: none !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-container {
+        margin-left: 15px;
+    }
+    
+    .logo-img {
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container {
+        margin-left: 10px;
+    }
+    
+    .logo-img {
+        max-width: 90px;
+    }
+}
+
+/* Desktop logo positioning - ensure it stays centered */
+@media (min-width: 769px) {
+    .logo-container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 180px;
+        height: 120px;
+        top: 0;
+        order: 0;
+        margin-left: 0;
+    }
+    
+    .header-left {
+        display: flex !important;
+        justify-content: flex-start;
+        flex: 1;
+    }
+    
+    .header-right {
+        flex: 1;
+        justify-content: flex-end;
+    }
+    
+    /* Footer desktop düzeni */
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+    
+    .footer-logo {
+        flex: 1;
+        min-width: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .footer-links {
+        flex: 1;
+        min-width: 180px;
+    }
+    
+    .footer-social {
+        flex: 1;
+        min-width: 180px;
+        display: block !important; /* Mobil gizleme kuralını override et */
+    }
+    
+    .footer-social .social-icons {
+        display: flex !important; /* Mobil gizleme kuralını override et */
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .footer-social .social-icons a {
+        color: var(--gold);
+        font-size: 1.3rem;
+        transition: var(--transition);
+    }
+    
+    .footer-social .social-icons a:hover {
+        transform: translateY(-3px);
+        text-shadow: 0 5px 15px rgba(212, 175, 55, 0.5);
     }
 }
 
