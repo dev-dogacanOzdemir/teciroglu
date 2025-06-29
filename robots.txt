@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.tecirogluinsaat.com/sitemap.xml
+
+# Disallow unnecessary files
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /script.js
+Disallow: /yapilar.txt
+
+# Allow important directories
+Allow: /img/
+Allow: /*.html
+Allow: /*.css
+Allow: /*.js
