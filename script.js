@@ -27,9 +27,25 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentSlide = 0;
     let slideInterval;
 
+    // Slider'ı başlat - ilk slide'ı aktif yap
+    function initializeSlider() {
+        if (slides.length > 0 && dots.length > 0) {
+            // Tüm slide'ları gizle
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // İlk slide'ı ve dot'u aktif yap
+            slides[0].classList.add('active');
+            dots[0].classList.add('active');
+            currentSlide = 0;
+        }
+    }
+
     // Slider otomatik geçiş
     function startSlider() {
-        slideInterval = setInterval(nextSlide, 5000);
+        slideInterval = setInterval(() => {
+            nextSlide();
+        }, 5000);
     }
 
     // Slider'ı sıfırla
@@ -40,16 +56,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Sonraki slide'a geç
     function nextSlide() {
-        goToSlide((currentSlide + 1) % slides.length);
+        if (slides.length > 0) {
+            const nextIndex = (currentSlide + 1) % slides.length;
+            goToSlide(nextIndex);
+        }
     }
 
     // Önceki slide'a geç
     function prevSlide() {
-        goToSlide((currentSlide - 1 + slides.length) % slides.length);
+        if (slides.length > 0) {
+            const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+            goToSlide(prevIndex);
+        }
     }
 
     // Belirli bir slide'a git
-    function goToSlide(n) {
+    function goToSlide(n) {        
+        // Güvenlik kontrolü
+        if (slides.length === 0 || dots.length === 0 || n < 0 || n >= slides.length) {
+            return;
+        }
+        
         slides[currentSlide].classList.remove('active');
         dots[currentSlide].classList.remove('active');
         currentSlide = n;
@@ -105,15 +132,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Slider kontrolleri
-    prevBtn.addEventListener('click', function() {
-        prevSlide();
-        resetSlider();
-    });
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+            prevSlide();
+            resetSlider();
+        });
+    }
 
-    nextBtn.addEventListener('click', function() {
-        nextSlide();
-        resetSlider();
-    });
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+            nextSlide();
+            resetSlider();
+        });
+    }
 
     // Dot'lara tıklanınca
     dots.forEach(function(dot, index) {
@@ -123,7 +154,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Slider başlat
+    // Slider'ı başlat
+    initializeSlider();
     startSlider();
 
     // Company Name Overlay pozisyonunu ayarlama
@@ -131,8 +163,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Sayfa yüklendiğinde ve scroll edildiğinde overlay pozisyonunu güncelleme
     function updateOverlayPosition() {
+        if (!companyNameOverlay) return;
+        
         // Hakkımızda bölümünün pozisyonunu al
         const aboutSection = document.getElementById('hakkimizda');
+        if (!aboutSection) return;
+        
         const aboutRect = aboutSection.getBoundingClientRect();
         
         // Overlay'i hakkımızda bölümünün üzerinde konumlandır
@@ -196,9 +232,9 @@ document.addEventListener('DOMContentLoaded', function() {
             isTablet = newIsTablet;
             
             // Company overlay mobilde gizle
-            if (isMobile) {
+            if (isMobile && companyNameOverlay) {
                 companyNameOverlay.style.display = 'none';
-            } else {
+            } else if (companyNameOverlay) {
                 companyNameOverlay.style.display = 'flex';
                 updateOverlayPosition();
             }
@@ -261,24 +297,26 @@ document.addEventListener('DOMContentLoaded', function() {
         const prevBtn = document.querySelector('.prev-btn');
         const nextBtn = document.querySelector('.next-btn');
         
-        if (isMobile) {
-            // Mobilde daha küçük kontroller
-            prevBtn.style.width = '40px';
-            prevBtn.style.height = '40px';
-            nextBtn.style.width = '40px';
-            nextBtn.style.height = '40px';
-        } else if (isTablet) {
-            // Tablette orta boyut kontroller
-            prevBtn.style.width = '45px';
-            prevBtn.style.height = '45px';
-            nextBtn.style.width = '45px';
-            nextBtn.style.height = '45px';
-        } else {
-            // Desktop'ta standart boyut
-            prevBtn.style.width = '50px';
-            prevBtn.style.height = '50px';
-            nextBtn.style.width = '50px';
-            nextBtn.style.height = '50px';
+        if (prevBtn && nextBtn) {
+            if (isMobile) {
+                // Mobilde daha küçük kontroller
+                prevBtn.style.width = '40px';
+                prevBtn.style.height = '40px';
+                nextBtn.style.width = '40px';
+                nextBtn.style.height = '40px';
+            } else if (isTablet) {
+                // Tablette orta boyut kontroller
+                prevBtn.style.width = '45px';
+                prevBtn.style.height = '45px';
+                nextBtn.style.width = '45px';
+                nextBtn.style.height = '45px';
+            } else {
+                // Desktop'ta standart boyut
+                prevBtn.style.width = '50px';
+                prevBtn.style.height = '50px';
+                nextBtn.style.width = '50px';
+                nextBtn.style.height = '50px';
+            }
         }
     }
     
@@ -317,7 +355,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Sayfa ilk yüklendiğinde responsive ayarları uygula
-    if (isMobile) {
+    if (isMobile && companyNameOverlay) {
         companyNameOverlay.style.display = 'none';
     }
     adjustSliderControls();

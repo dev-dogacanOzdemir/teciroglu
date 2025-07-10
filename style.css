@@ -379,27 +379,38 @@ header .container {
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 1s ease;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 0s linear 1s;
+    display: block;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
 }
 
 .slide.active {
     opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease;
+    z-index: 2;
 }
 
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/* Slide overlay for better text readability */
+.slide::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
-    filter: brightness(0.7);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
 }
 
 /* Slider İçeriği */
 .slide-content {
     position: relative;
-    z-index: 1;
+    z-index: 10;
     max-width: 800px;
     text-align: left; /* Ortalamadan sola hizalama için */
     padding: 0 20px;
@@ -460,7 +471,7 @@ header .container {
     justify-content: space-between;
     padding: 0 30px;
     transform: translateY(50%);
-    z-index: 10;
+    z-index: 20;
 }
 
 .prev-btn, .next-btn {
@@ -490,7 +501,7 @@ header .container {
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
-    z-index: 10;
+    z-index: 20;
 }
 
 .dot {
@@ -1314,6 +1325,195 @@ footer {
     }
 }
 
+/* Slider Background Images - Desktop */
+.slide-1 {
+    background-image: url('img/slider1.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.slide-2 {
+    background-image: url('img/slider2.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.slide-3 {
+    background-image: url('img/slider4.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Slider Background Images - Mobile (768px ve altı) */
+@media (max-width: 768px) {
+    .slide-1 {
+        background-image: url('img/slider1-mobile.png') !important;
+        background-position: center !important;
+        background-size: cover !important;
+        background-attachment: scroll !important;
+    }
+    
+    .slide-2 {
+        background-image: url('img/slider2-mobile.png') !important;
+        background-position: center !important;
+        background-size: cover !important;
+        background-attachment: scroll !important;
+    }
+    
+    .slide-3 {
+        background-image: url('img/slider4-mobile.png') !important;
+        background-position: center !important;
+        background-size: cover !important;
+        background-attachment: scroll !important;
+    }
+    
+    /* Mobile slider optimization */
+    #hero-slider {
+        height: 100vh;
+        margin-top: -80px;
+    }
+    
+    .slider-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* Mobile slider content adjustments */
+    .slide-content {
+        left: 50%;
+        max-width: 90%;
+        padding: 0 15px;
+        transform: translate(-50%, -30%);
+        text-align: center;
+        top: 60%;
+    }
+    
+    .project-title {
+        font-size: 2.5rem;
+        padding-left: 0;
+        text-align: center;
+    }
+    
+    .project-title::before {
+        display: none;
+    }
+    
+    .project-location {
+        font-size: 0.6em;
+    }
+    
+    .project-slogan {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+    
+    /* Mobile slider controls */
+    .slider-controls {
+        padding: 0 20px;
+    }
+    
+    .prev-btn, .next-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    
+    .slider-dots {
+        bottom: 20px;
+        gap: 8px;
+    }
+    
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* Slider Background Images - Small Mobile (480px ve altı) */
+@media (max-width: 480px) {
+    .slide-1 {
+        background-image: url('img/slider1-mobile.png') !important;
+        background-position: center center !important;
+        background-size: cover !important;
+        background-attachment: scroll !important;
+    }
+    
+    .slide-2 {
+        background-image: url('img/slider2-mobile.png') !important;
+        background-position: center center !important;
+        background-size: cover !important;
+        background-attachment: scroll !important;
+    }
+    
+    .slide-3 {
+        background-image: url('img/slider4-mobile.png') !important;
+        background-position: center center !important;
+        background-size: cover !important;
+        background-attachment: scroll !important;
+    }
+    
+    /* Small mobile slider optimization */
+    #hero-slider {
+        height: 100vh;
+        margin-top: -60px;
+    }
+    
+    /* Small mobile slider content adjustments */
+    .slide-content {
+        left: 50%;
+        max-width: 95%;
+        padding: 0 10px;
+        transform: translate(-50%, -25%);
+        text-align: center;
+        top: 65%;
+    }
+    
+    .project-title {
+        font-size: 2rem;
+        padding-left: 0;
+        line-height: 1.1;
+        text-align: center;
+    }
+    
+    .project-title::before {
+        display: none;
+    }
+    
+    .project-location {
+        font-size: 0.55em;
+        margin-bottom: 0.2em;
+    }
+    
+    .project-slogan {
+        font-size: 1rem;
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+    
+    /* Small mobile slider controls */
+    .slider-controls {
+        padding: 0 15px;
+    }
+    
+    .prev-btn, .next-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .slider-dots {
+        bottom: 15px;
+        gap: 6px;
+    }
+    
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
 /* Enhanced Mobile Responsive - Remove duplicate rules since they're covered above */
 
 /* ===== RESPONSIVE DESIGN IMPROVEMENTS ===== */
@@ -1443,10 +1643,11 @@ footer {
     
     .slide-content {
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -30%);
         text-align: center;
         max-width: 90%;
         padding: 0 20px;
+        top: 73%;
     }
     
     .project-title {
@@ -2307,6 +2508,27 @@ footer {
     .footer-social .social-icons a:hover {
         transform: translateY(-3px);
         text-shadow: 0 5px 15px rgba(212, 175, 55, 0.5);
+    }
+}
+
+/* Slider optimizations for mobile */
+@media (max-width: 768px) {
+    .slide {
+        background-attachment: scroll; /* Better performance on mobile */
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .slide-content {
+        position: relative;
+        z-index: 10;
+    }
+}
+
+/* Very small mobile optimizations */
+@media (max-width: 480px) {
+    .slide::before {
+        background: rgba(0, 0, 0, 0.4); /* Çok küçük ekranlar için biraz daha karartma */
     }
 }
 
