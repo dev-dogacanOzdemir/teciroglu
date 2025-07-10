@@ -88,7 +88,7 @@
         }
         
         .status-badge {
-            background: #28a745; /* Yeşil renk tamamlandı için */
+            background: var(--copper);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -674,7 +674,7 @@
         }
         
         .status-badge {
-            background: #28a745; /* Yeşil renk tamamlandı için */
+            background: var(--copper);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
