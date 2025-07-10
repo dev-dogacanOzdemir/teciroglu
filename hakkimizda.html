@@ -33,27 +33,120 @@
 </head>
 <body>
 
-<!-- Tam Sayfa Menü -->
-<div class="fullscreen-menu">
-    <div class="close-btn">
-        <i class="fas fa-times"></i>
-    </div>
-    <div class="menu-content">
-        <ul class="menu-links">
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="devam-eden-projeler.html">Devam Eden Projeler</a></li>
-            <li><a href="bitmis-projeler.html">Tamamlanan Projeler</a></li>
-            <li><a href="hakkimizda.html">Hakkımızda</a></li>
-            <li><a href="iletisim.html">İletişim</a></li>
-        </ul>
-        <div class="menu-contact">
-            <h3>İletişim</h3>
-            <p><i class="fas fa-map-marker-alt"></i> Örnek Mah. İnşaat Cad. No:123, İstanbul</p>
-            <p><i class="fas fa-phone"></i> +90 212 123 45 67</p>
-            <p><i class="fas fa-envelope"></i> info@tecirogluyapi.com</p>
+<!-- Modern Kurumsal Menü -->
+<div class="modern-menu-overlay" id="menuOverlay">
+    <div class="modern-menu-container">
+        <!-- Menü Header -->
+        <div class="menu-header">
+            <div class="menu-logo">
+                <img src="img/teciroglu-LOGO-GOLD.svg" alt="Teciroğlu İnşaat">
+            </div>
+            <button class="menu-close" id="menuClose">
+                <span class="close-line"></span>
+                <span class="close-line"></span>
+            </button>
+        </div>
+        
+        <!-- Menü İçeriği -->
+        <div class="menu-main-content">
+            <!-- Sol Taraf - Navigasyon -->
+            <div class="menu-navigation">
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">
+                                <span class="nav-number">01</span>
+                                <span class="nav-text">Ana Sayfa</span>
+                                <span class="nav-description">Şirket ve hizmetlerimiz hakkında</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="devam-eden-projeler.html" class="nav-link">
+                                <span class="nav-number">02</span>
+                                <span class="nav-text">Devam Eden Projeler</span>
+                                <span class="nav-description">Şu an inşaat halindeki projelerimiz</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="bitmis-projeler.html" class="nav-link">
+                                <span class="nav-number">03</span>
+                                <span class="nav-text">Tamamlanan Projeler</span>
+                                <span class="nav-description">Başarıyla teslim ettiğimiz projeler</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="hakkimizda.html" class="nav-link">
+                                <span class="nav-number">04</span>
+                                <span class="nav-text">Hakkımızda</span>
+                                <span class="nav-description">Şirketimizin hikayesi ve vizyonu</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="iletisim.html" class="nav-link">
+                                <span class="nav-number">05</span>
+                                <span class="nav-text">İletişim</span>
+                                <span class="nav-description">Bizimle iletişime geçin</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <!-- Sağ Taraf - İletişim ve Bilgiler -->
+            <div class="menu-info-panel">
+                <div class="contact-card">
+                    <h3 class="contact-title">İletişim Bilgileri</h3>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Adres</h4>
+                                <p>Atapark Mahallesi 340. Cadde<br>No: 63/A-B Keçiören - Ankara</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Telefon</h4>
+                                <p>+90 531 492 65 03</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>E-posta</h4>
+                                <p>tecirogluinsaat@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sosyal Medya -->
+                <div class="menu-social">
+                    <h4>Bizi Takip Edin</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://instagram.com/tecirogluinsaat" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 
 <!-- Header Section -->
 <header id="main-header">

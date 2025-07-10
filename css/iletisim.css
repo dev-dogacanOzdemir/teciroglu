@@ -229,3 +229,623 @@
         height: 300px;
     }
 }
+
+/* Modern Kurumsal Menü Stilleri */
+.modern-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, 
+        rgba(13, 35, 64, 0.98) 0%, 
+        rgba(26, 58, 100, 0.95) 50%, 
+        rgba(36, 73, 122, 0.98) 100%);
+    backdrop-filter: blur(20px);
+    z-index: 15000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.modern-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modern-menu-container {
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/* Menü Header */
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(200, 117, 51, 0.2);
+    margin-bottom: 40px;
+}
+
+.menu-logo img {
+    height: 130px;
+    width: auto;
+}
+
+.menu-close {
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    z-index: 2;
+}
+
+.close-line {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--copper);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: all 0.3s ease;
+}
+
+.close-line:first-child {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-line:last-child {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.menu-close:hover .close-line {
+    background: white;
+}
+
+/* Menü Ana İçerik */
+.menu-main-content {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 80px;
+    flex: 1;
+    align-items: start;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    min-height: calc(100vh - 140px);
+}
+
+/* Navigasyon */
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin-bottom: 12px;
+    opacity: 0;
+    transform: translateY(40px) translateX(-20px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modern-menu-overlay.active .nav-item {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+}
+
+.modern-menu-overlay.active .nav-item:nth-child(1) { transition-delay: 0.15s; }
+.modern-menu-overlay.active .nav-item:nth-child(2) { transition-delay: 0.25s; }
+.modern-menu-overlay.active .nav-item:nth-child(3) { transition-delay: 0.35s; }
+.modern-menu-overlay.active .nav-item:nth-child(4) { transition-delay: 0.45s; }
+.modern-menu-overlay.active .nav-item:nth-child(5) { transition-delay: 0.55s; }
+
+.nav-link {
+    display: block;
+    padding: 30px 25px;
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(200, 117, 51, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.nav-link:hover::before,
+.nav-item.active .nav-link::before {
+    left: 100%;
+}
+
+.nav-link:hover,
+.nav-item.active .nav-link {
+    color: var(--copper);
+    border-bottom-color: var(--copper);
+    background: rgba(200, 117, 51, 0.08);
+    transform: translateX(10px);
+}
+
+.nav-number {
+    font-size: 0.9rem;
+    color: var(--copper);
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+    font-family: 'Inter', sans-serif;
+}
+
+.nav-text {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+    font-family: 'AW Conqueror Didot Light', serif;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.nav-description {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.4;
+}
+
+.nav-link:hover .nav-description,
+.nav-item.active .nav-link .nav-description {
+    color: rgba(200, 117, 51, 0.8);
+}
+
+/* Info Panel */
+.menu-info-panel {
+    padding-left: 40px;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    opacity: 0;
+    transform: translateX(50px) translateY(20px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: fit-content;
+}
+
+.modern-menu-overlay.active .menu-info-panel {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+    transition-delay: 0.4s;
+}
+
+/* İletişim Kartı */
+.contact-card {
+    background: linear-gradient(135deg, 
+        rgba(200, 117, 51, 0.12) 0%, 
+        rgba(255, 255, 255, 0.08) 100%);
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(200, 117, 51, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.contact-title {
+    color: var(--copper);
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    font-family: 'AW Conqueror Didot Light', serif;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-icon {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--copper), #d4954a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.contact-details h4 {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.contact-details p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Sosyal Medya */
+.menu-social {
+    margin-bottom: 30px;
+}
+
+.menu-social h4 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    padding: 0;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    background: none;
+    border: none;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+}
+
+.social-link i {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+    background: linear-gradient(135deg, var(--copper), #d4954a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white !important;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    line-height: 1;
+}
+
+.social-link:hover i {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(200, 117, 51, 0.4);
+    background: linear-gradient(135deg, #d4954a, var(--copper));
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .menu-main-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .menu-info-panel {
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 40px;
+    }
+    
+    .modern-menu-container {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .modern-menu-container {
+        padding: 0 20px;
+    }
+    
+    .menu-header {
+        padding: 20px 0;
+        margin-bottom: 30px;
+    }
+    
+    .menu-logo img {
+        height: 130px;
+    }
+    
+    /* Mobil için navigasyon optimizasyonu */
+    .nav-link {
+        padding: 20px 15px;
+        margin-bottom: 6px;
+        border-radius: 12px;
+    }
+    
+    .nav-text {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+    
+    .nav-number {
+        font-size: 0.8rem;
+        margin-bottom: 6px;
+    }
+    
+    .nav-description {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+    
+    /* Mobil için contact card */
+    .contact-card {
+        padding: 25px 20px;
+        border-radius: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .contact-title {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    
+    .contact-item {
+        margin-bottom: 18px;
+        gap: 12px;
+    }
+    
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .contact-details h4 {
+        font-size: 0.9rem;
+        margin-bottom: 3px;
+    }
+    
+    .contact-details p {
+        font-size: 0.85rem;
+    }
+    
+    /* Mobil sosyal medya */
+    .menu-social h4 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+    
+    .social-links {
+        gap: 12px;
+        justify-content: center;
+    }
+    
+    .social-link i {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        min-height: 38px;
+        font-size: 1rem;
+    }
+    
+    .menu-main-content {
+        padding-top: 20px;
+        gap: 30px;
+        padding-bottom: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modern-menu-container {
+        padding: 0 15px;
+    }
+    
+    .menu-header {
+        padding: 15px 0;
+        margin-bottom: 25px;
+    }
+    
+    .menu-logo img {
+        height: 130px;
+    }
+    
+    /* Küçük ekranlar için daha kompakt navigasyon */
+    .nav-link {
+        padding: 15px 12px;
+        margin-bottom: 4px;
+        border-radius: 10px;
+        transform: none;
+    }
+    
+    .nav-link:hover,
+    .nav-item.active .nav-link {
+        transform: none;
+        background: rgba(200, 117, 51, 0.12);
+    }
+    
+    .nav-text {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 4px;
+        line-height: 1.1;
+    }
+    
+    .nav-number {
+        font-size: 0.75rem;
+        margin-bottom: 4px;
+    }
+    
+    .nav-description {
+        font-size: 0.8rem;
+        line-height: 1.2;
+    }
+    
+    /* Küçük ekran contact card */
+    .contact-card {
+        padding: 20px 15px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+    }
+    
+    .contact-title {
+        font-size: 1.1rem;
+        margin-bottom: 18px;
+        text-align: center;
+    }
+    
+    .contact-item {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .contact-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+    }
+    
+    .contact-details {
+        flex: 1;
+    }
+    
+    .contact-details h4 {
+        font-size: 0.85rem;
+        margin-bottom: 2px;
+    }
+    
+    .contact-details p {
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+    
+    /* Küçük ekran sosyal medya */
+    .menu-social {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    
+    .menu-social h4 {
+        font-size: 1rem;
+        margin-bottom: 12px;
+    }
+    
+    .social-links {
+        gap: 10px;
+        justify-content: center;
+    }
+    
+    .social-link i {
+        width: 35px;
+        height: 35px;
+        min-width: 35px;
+        min-height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .menu-main-content {
+        padding-top: 15px;
+        gap: 25px;
+        padding-bottom: 40px;
+        min-height: calc(100vh - 100px);
+    }
+}
+
+/* Landscape mobil cihazlar için */
+@media (max-width: 812px) and (orientation: landscape) {
+    .modern-menu-container {
+        padding: 0 20px;
+    }
+    
+    .menu-header {
+        padding: 15px 0;
+        margin-bottom: 20px;
+    }
+    
+    .menu-logo img {
+        height: 50px;
+    }
+    
+    .menu-main-content {
+        padding-top: 10px;
+        gap: 30px;
+        padding-bottom: 35px;
+        grid-template-columns: 1fr 300px;
+    }
+    
+    .nav-link {
+        padding: 12px 15px;
+    }
+    
+    .nav-text {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+    
+    .contact-card {
+        padding: 20px;
+    }
+    
+    .menu-info-panel {
+        padding-left: 20px;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        border-top: none;
+        padding-top: 0;
+    }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+    .nav-link {
+        min-height: 44px;
+        touch-action: manipulation;
+    }
+    
+    .social-link {
+        min-height: 44px;
+        min-width: 44px;
+        touch-action: manipulation;
+    }
+    
+    .menu-close {
+        min-height: 44px;
+        min-width: 44px;
+        touch-action: manipulation;
+    }
+}

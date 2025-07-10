@@ -1,23 +1,63 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Menü Toggle
+    // Modern Menü Toggle
     const menuToggle = document.querySelector('.menu-toggle');
+    const modernMenu = document.querySelector('.modern-menu-overlay');
+    const menuClose = document.querySelector('.menu-close');
+    
+    // Eski menü için fallback
     const fullscreenMenu = document.querySelector('.fullscreen-menu');
     const closeBtn = document.querySelector('.close-btn');
 
-    function toggleMenu() {
-        menuToggle.classList.toggle('open');
-        fullscreenMenu.classList.toggle('open');
+    function toggleModernMenu() {
+        if (modernMenu) {
+            menuToggle.classList.toggle('open');
+            modernMenu.classList.toggle('active');
 
-        // Sayfanın scroll edilmesini engelle/serbest bırak
-        if (fullscreenMenu.classList.contains('open')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
+            // Sayfanın scroll edilmesini engelle/serbest bırak
+            if (modernMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         }
     }
 
-    menuToggle.addEventListener('click', toggleMenu);
-    closeBtn.addEventListener('click', toggleMenu);
+    function toggleOldMenu() {
+        if (fullscreenMenu) {
+            menuToggle.classList.toggle('open');
+            fullscreenMenu.classList.toggle('open');
+
+            // Sayfanın scroll edilmesini engelle/serbest bırak
+            if (fullscreenMenu.classList.contains('open')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+    }
+
+    // Modern menü varsa onu kullan, yoksa eski menüyü kullan
+    if (modernMenu && menuClose) {
+        menuToggle.addEventListener('click', toggleModernMenu);
+        menuClose.addEventListener('click', toggleModernMenu);
+        
+        // ESC tuşu ile menüyü kapat
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modernMenu.classList.contains('active')) {
+                toggleModernMenu();
+            }
+        });
+        
+        // Overlay'e tıklayınca menüyü kapat
+        modernMenu.addEventListener('click', function(e) {
+            if (e.target === modernMenu) {
+                toggleModernMenu();
+            }
+        });
+    } else if (fullscreenMenu && closeBtn) {
+        menuToggle.addEventListener('click', toggleOldMenu);
+        closeBtn.addEventListener('click', toggleOldMenu);
+    }
 
     // Slider Fonksiyonları
     const slides = document.querySelectorAll('.slide');
